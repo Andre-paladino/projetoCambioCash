@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Quem somos?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-button (click)="abrirPagina('home')" shape="round" color="dark">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+
+    <div class="img-sobre">
+      <ion-img
+        src="https://images3.memedroid.com/images/UPLOADED235/661ff73f00df0.jpeg"
+        alt=""
+      />
+    </div>
+
+    <ion-grid class="info-alunos">
+      <ion-row>
+        <ion-col>
+          <p><strong>Alunos:</strong></p>
+          <p>Carlos Vitor Barbosa</p>
+          <p>Matheus Alencar</p>
+          <p>Andre Paladino</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <p><strong>Unidade:</strong> Universidade Augusto Motta - Unisuam (Bonsucesso)</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <p><strong>Turma:</strong> ADS0301M</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <p><strong>Professor:</strong> Charles Bastos</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <p><strong>E-mails:</strong></p>
+          <p>carlosv&#64;souunisuam.com.br</p>
+          <p>andrepaladino&#64;souunisuam.com.br</p>
+          <p>matheusalencar&#64;souunisuam.com.br</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

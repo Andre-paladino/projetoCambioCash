@@ -1,0 +1,21 @@
+<ion-content class="fundo">
+  <div class="p">
+    <ion-img class="img-cambio" [src]="imagemCambio"></ion-img>
+  </div>
+
+  <div>
+    <ion-button 
+        expand="block" 
+        color="light" 
+        shape="round" 
+        class="button"
+        (click)="abrirPagina('login')">Fazer login
+    </ion-button>
+
+    <ion-button class="button"
+      expand="block"
+      color="light"
+      shape="round"
+      (click)="abrirPagina('sobre')">Quem somos?</ion-button>
+  </div>
+</ion-content>

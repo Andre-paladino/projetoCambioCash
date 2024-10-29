@@ -1,0 +1,41 @@
+
+<ion-content class="ion-padding">
+
+  <ion-button  shape="round" color="dark" (click)="abrirPagina('login')">
+    <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+  </ion-button>
+
+<ion-card>
+
+  <ion-card-title class="ion-padding">
+    <ion-card-title style="color: #177208; ">Cadastre-se</ion-card-title>
+  </ion-card-title>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-input type="email" [(ngModel)]="email" placeholder="E-mail"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password"  [(ngModel)]="senha" placeholder="Senha"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password" placeholder="Confirme Senha"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+      <ion-row>
+        <ion-col>
+          <ion-button style="--background: #177208" expand="block" (click)="abrirPagina('login')">Já possuo login</ion-button>
+        </ion-col>
+        <ion-col> 
+          <ion-button style="--background: #177208" expand="block" (click)="cadastrar()">Registrar</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+</ion-card>
+</ion-content>

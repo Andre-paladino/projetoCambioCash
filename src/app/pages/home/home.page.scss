@@ -1,0 +1,23 @@
+.fundo {
+  --background: linear-gradient(to bottom, var(--ion-color-background-linear), var(--ion-color-background-linear2));
+  --overflow: hidden;
+}
+
+.img-cambio {
+  height: 100px;
+  width: 100px;
+}
+
+.p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+
+.button {
+  width: 90%;
+  margin: 10px auto;
+}
+

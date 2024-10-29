@@ -1,0 +1,22 @@
+
+  .icone {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin: 15px 0px
+  }
+
+  ion-button {
+    --background: #177208;
+    --background-hover: #145f08;
+    --background-activated: #145f08;
+  
+    --color: white;
+    --border-radius: 20px;
+  }
+
+  .botao-final {
+    margin-top: 30vh;
+    margin-bottom: 5vh;
+  }
+
