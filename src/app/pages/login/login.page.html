@@ -1,22 +1,21 @@
 
 <ion-content class="ion-padding">
-
-
-<ion-button  shape="round" color="dark" (click)="abrirPagina('home')">
-  <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-</ion-button>
+  <ion-button  shape="round" color="dark" (click)="abrirPagina('home')">
+    <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+  </ion-button>
 
 <ion-card-title class="ion-padding">
     <ion-card-title style="color: #177208; ">Acessar</ion-card-title>
 </ion-card-title>
 
-<div>
-  <div *ngIf="(afAuth.user | async) as user; else loginTemplate">
-    <h3>Bem-vindo, {{ user.email }}!</h3>
-    <ion-button expand="full" (click)="logout()" style="--background: red">Logout</ion-button>
+
+  <div *ngIf="nomeUsuario">
+    <h3>Bem-vindo, {{ nomeUsuario }}</h3>
+    <button expand="full" ion-button (click)="logout()" style="background-color: brown; color: aliceblue;">Logout</button>
   </div>
 
-  <ng-template #loginTemplate>
+<div *ngIf="!nomeUsuario">
+  <div>
     <ion-list>
       <ion-item>
         <ion-label position="floating">E-mail</ion-label>
@@ -31,13 +30,13 @@
     <div class="container">
       <ion-row>
         <ion-col><ion-button expand="full" (click)="login()" style="--background: #177208;">Entrar</ion-button></ion-col>
-        <ion-col><ion-button expand="full" (click)="abrirPagina('cadastro')" style="--background: #177208;">Cadastre-se</ion-button></ion-col>
+        <ion-col><ion-button  expand="full" (click)="abrirPagina('cadastro')" style="--background: #177208;">Cadastre-se</ion-button></ion-col>
       </ion-row>
     </div>
 
-    <p *ngIf="mensagemErro" class="error-message">{{ mensagemErro }}</p>
+    <p *ngIf="mensagemErro" class="error-message" style="color: rgb(247, 17, 17);">{{ mensagemErro }}</p>
   
-  </ng-template>
+  </div>
 </div>
 </ion-content>
 

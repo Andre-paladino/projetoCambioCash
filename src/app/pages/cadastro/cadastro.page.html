@@ -13,16 +13,33 @@
 
     <ion-list>
 
+      <ion-item  *ngIf="mensagemCadastro" class="mensagem-sucesso">
+        <h3 style="--background: green; color: #ffffff;">{{mensagemCadastro}}</h3>
+      </ion-item>
+
+
       <ion-item>
-        <ion-input type="email" [(ngModel)]="email" placeholder="E-mail"></ion-input>
+        <ion-input (input)="aoInteragir()" type="email" [(ngModel)]="email" placeholder="E-mail"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="password"  [(ngModel)]="senha" placeholder="Senha"></ion-input>
+        <ion-input (input)="aoInteragir()" type="nome" [(ngModel)]="nome" placeholder="Nome"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="password" placeholder="Confirme Senha"></ion-input>
+        <ion-input (input)="aoInteragir()" type="sobrenome" [(ngModel)]="sobrenome" placeholder="Sobrenome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input (input)="aoInteragir()" type="password"  [(ngModel)]="senha" placeholder="Senha"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input (input)="aoInteragir()" type="password" [(ngModel)]="confirmeSenha" placeholder="Confirme Senha"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="mensagemErro" class="error-message">
+        <h3 style="color: brown;">{{ mensagemErro }}</h3>
       </ion-item>
 
     </ion-list>
