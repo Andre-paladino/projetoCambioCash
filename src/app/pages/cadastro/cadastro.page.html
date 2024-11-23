@@ -1,58 +1,61 @@
-
 <ion-content class="ion-padding">
 
-  <ion-button  shape="round" color="dark" (click)="abrirPagina('login')">
+  <ion-button shape="round" color="dark" (click)="abrirPagina('login')" class="back-button">
     <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
   </ion-button>
 
-<ion-card>
+  <ion-card class="registration-card">
 
-  <ion-card-title class="ion-padding">
-    <ion-card-title style="color: #177208; ">Cadastre-se</ion-card-title>
-  </ion-card-title>
+    <ion-card-title class="ion-padding registration-title">
+      <ion-card-title>Cadastre-se</ion-card-title>
+    </ion-card-title>
 
-    <ion-list>
+    <div class="container">
 
-      <ion-item  *ngIf="mensagemCadastro" class="mensagem-sucesso">
-        <h3 style="--background: green; color: #ffffff;">{{mensagemCadastro}}</h3>
-      </ion-item>
-
-
-      <ion-item>
-        <ion-input (input)="aoInteragir()" type="email" [(ngModel)]="email" placeholder="E-mail"></ion-input>
+      <ion-item *ngIf="mensagemCadastro" class="mensagem-sucesso">
+        <h3>{{mensagemCadastro}}</h3>
       </ion-item>
 
       <ion-item>
-        <ion-input (input)="aoInteragir()" type="nome" [(ngModel)]="nome" placeholder="Nome"></ion-input>
+        <ion-input (input)="aoInteragir()" type="email" [(ngModel)]="email" placeholder="E-mail" class="input-field"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input (input)="aoInteragir()" type="sobrenome" [(ngModel)]="sobrenome" placeholder="Sobrenome"></ion-input>
+        <ion-input (input)="aoInteragir()" type="text" [(ngModel)]="nome" placeholder="Nome" class="input-field"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input (input)="aoInteragir()" type="password"  [(ngModel)]="senha" placeholder="Senha"></ion-input>
+        <ion-input (input)="aoInteragir()" type="text" [(ngModel)]="sobrenome" placeholder="Sobrenome" class="input-field"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input (input)="aoInteragir()" type="password" [(ngModel)]="confirmeSenha" placeholder="Confirme Senha"></ion-input>
+        <ion-input (input)="aoInteragir()" type="password" [(ngModel)]="senha" placeholder="Senha" class="input-field">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-input (input)="aoInteragir()" type="password" [(ngModel)]="confirmeSenha" placeholder="Confirme Senha" class="input-field">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+      </ion-item>
+
+      <div class="button-group">
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="abrirPagina('login')" class="login-button">Já possuo login</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" (click)="cadastrar()" type="submit" class="register-button">Registrar</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
 
       <ion-item *ngIf="mensagemErro" class="error-message">
-        <h3 style="color: brown;">{{ mensagemErro }}</h3>
+        <h3>{{ mensagemErro }}</h3>
       </ion-item>
 
-    </ion-list>
-
-    <div>
-      <ion-row>
-        <ion-col>
-          <ion-button style="--background: #177208" expand="block" (click)="abrirPagina('login')">Já possuo login</ion-button>
-        </ion-col>
-        <ion-col> 
-          <ion-button style="--background: #177208" expand="block" (click)="cadastrar()">Registrar</ion-button>
-        </ion-col>
-      </ion-row>
     </div>
-</ion-card>
+
+  </ion-card>
 </ion-content>

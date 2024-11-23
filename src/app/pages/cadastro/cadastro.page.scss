@@ -1,0 +1,55 @@
+ion-content {
+  --background: rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  margin-bottom: 20px;
+}
+
+.registration-card {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-title {
+  color: #177208;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-field {
+  --background: #8d9693;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.button-group {
+  margin-top: 20px;
+}
+
+.login-button, .register-button {
+  --background: #177208;
+  color: #fff;
+}
+
+.mensagem-sucesso h3 {
+  background: green;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error-message h3 {
+  color: brown;
+  padding: 10px;
+  border-radius: 5px;
+}

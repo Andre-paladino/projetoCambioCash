@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { ConversorService } from 'src/app/services/conversor.service';
 
 @Component({
@@ -15,7 +17,7 @@ export class CambioConversorPage implements OnInit {
   valor: number = 0;
   resultado: number = 0;
 
-  constructor(private conversorService: ConversorService) {}
+  constructor(private conversorService: ConversorService, public nav: NavController, private router :Router) {}
 
   ngOnInit() {
     this.loadExchangeRates();
@@ -59,5 +61,10 @@ export class CambioConversorPage implements OnInit {
     this.moedaDestino = temp;
 
     this.converterMoeda();
+  }
+
+  
+  abrirPaginaMaps() {
+    this.router.navigate(['/cambio-conversor/cambio-maps']);
   }
 }

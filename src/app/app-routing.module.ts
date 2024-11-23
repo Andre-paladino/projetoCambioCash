@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
+
 
 const routes: Routes = [
   {
@@ -17,7 +19,9 @@ const routes: Routes = [
   },
   {
     path: 'cambio-conversor',
-    loadChildren: () => import('./pages/cambio-conversor/cambio-conversor.module').then( m => m.CambioConversorPageModule)
+    loadChildren: () => import('./pages/cambio-conversor/cambio-conversor.module').then( m => m.CambioConversorPageModule),
+    canActivate: [authGuard]
+   
   },
   {
     path: 'login',
@@ -29,8 +33,9 @@ const routes: Routes = [
   },
   {
     path: 'cambio-maps',
-    loadChildren: () => import('./pages/cambio-maps/cambio-maps.module').then( m => m.CambioMapsPageModule)
-  },
+    loadChildren: () => import('./pages/cambio-maps/cambio-maps.module').then( m =>  m.CambioMapsPageModule)
+  }
+  
 ];
 
 @NgModule({

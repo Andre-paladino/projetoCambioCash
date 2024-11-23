@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Conversor de Moedas</ion-title>
+    <ion-icon expand="full" ion-button slot="end" name="log-out-outline"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -42,7 +43,7 @@
         </ion-select>
       </ion-col>
     </ion-row>
-    
+
     <ion-row>
       <ion-col>
         <ion-item>
@@ -55,7 +56,7 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    
+
     <ion-row>
       <ion-col>
         <ion-button
@@ -65,20 +66,20 @@
         >Converter</ion-button>
       </ion-col>
     </ion-row>
-    
+
     <ion-row>
       <ion-col>
         <ion-label *ngIf="resultado">Resultado: {{ resultado | number:'1.2-2' }} {{ moedaDestino }}</ion-label>
       </ion-col>
     </ion-row>
-    
+
   </ion-grid>
 
   <ion-grid class="botao-final">
     <ion-row>
       <ion-col style="text-align: center">
         <ion-label>Encontre casas de câmbio próximas a você</ion-label>
-        <ion-button expand="block" color="warning">Clique aqui</ion-button>
+        <ion-button (click)="abrirPaginaMaps()" expand="block" color="warning">Clique aqui</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

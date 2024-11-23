@@ -1,42 +1,48 @@
-
 <ion-content class="ion-padding">
-  <ion-button  shape="round" color="dark" (click)="abrirPagina('home')">
+  <ion-button shape="round" color="dark" (click)="abrirPagina('home')">
     <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
   </ion-button>
 
-<ion-card-title class="ion-padding">
+  <ion-card-title class="ion-padding">
     <ion-card-title style="color: #177208; ">Acessar</ion-card-title>
-</ion-card-title>
+  </ion-card-title>
 
 
   <div *ngIf="nomeUsuario">
     <h3>Bem-vindo, {{ nomeUsuario }}</h3>
-    <button expand="full" ion-button (click)="logout()" style="background-color: brown; color: aliceblue;">Logout</button>
+    <button expand="full" ion-button (click)="logout()"
+      style="background-color: brown; color: aliceblue;">Logout</button>
   </div>
 
-<div *ngIf="!nomeUsuario">
-  <div>
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">E-mail</ion-label>
-        <ion-input type="email" [(ngModel)]="email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Senha</ion-label>
-        <ion-input type="password" [(ngModel)]="senha"></ion-input>
-      </ion-item>
-    </ion-list>
+  <div *ngIf="!loggedIn">
+    <div>
+      <ion-list>
+        <ion-item>
+          <ion-label style="margin-bottom: 15px;" position="stacked">E-mail</ion-label>
+          <ion-input type="email" [(ngModel)]="email" placeholder="e-mail"></ion-input>
+        </ion-item>
 
-    <div class="container">
-      <ion-row>
-        <ion-col><ion-button expand="full" (click)="login()" style="--background: #177208;">Entrar</ion-button></ion-col>
-        <ion-col><ion-button  expand="full" (click)="abrirPagina('cadastro')" style="--background: #177208;">Cadastre-se</ion-button></ion-col>
-      </ion-row>
+        
+        <ion-item>
+          <ion-label style="margin-bottom: 25px;" position="stacked">Senha</ion-label>
+
+          <ion-input type="password" [(ngModel)]="senha" placeholder="password" >
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <div class="container">
+        <ion-row>
+          <ion-col><ion-button expand="full" (click)="login()"
+              style="--background: #177208;">Entrar</ion-button></ion-col>
+          <ion-col><ion-button expand="full" (click)="abrirPagina('cadastro')"
+              style="--background: #177208;">Cadastre-se</ion-button></ion-col>
+        </ion-row>
+      </div>
+
+      <p *ngIf="mensagemErro" class="error-message" style="color: rgb(247, 17, 17);">{{ mensagemErro }}</p>
+
     </div>
-
-    <p *ngIf="mensagemErro" class="error-message" style="color: rgb(247, 17, 17);">{{ mensagemErro }}</p>
-  
   </div>
-</div>
 </ion-content>
-
